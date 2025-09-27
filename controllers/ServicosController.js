@@ -14,7 +14,7 @@ router.get("/servicos", (req, res) => {
     { projeto: "Aplicativo de Agenda Médica"},
   ];
   res.render("servicos", {
-    servicos: servicos,
+    servicos: servicos
   });
 });
 
