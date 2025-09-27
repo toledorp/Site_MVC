@@ -1,65 +1,61 @@
 <%- include('partials/header.ejs') %>
 <%- include('partials/navbar.ejs') %>
+        <!-- servicos -->
+        <section class="container-contatos">
+            <h1 class="text-center">Contate-nos</h1>
 
-
-
-    <!-- servicos -->
-    <section class="container-contactos">
-        
-        <h1 class="text-center">Contacte-nos</h1>
-
-
-        <table class="table table-border table-houver">
-            <thead class="table-dark">
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Ramal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <%contatos.foreach(contatos=>{ %>
+            <table class="table table-border table-hover">
+                <thead class="table-dark">
                     <tr>
-                        <td>
-                            <%= contatos.nome %>
-                        </td>
-                        <td>
-                            <%= contatatos.emal %>
-                        </td>
-                        <td>
-                            <%= contataos.ramal %>
-                        </td>    
+                        <th>Foto</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Ramal</th>
                     </tr>
+                </thead>
+                <tbody>
+                    <% contatos.forEach(contato=> { %>
+                        <tr>
+                            <td>
+                                <div class="avatar-container">
+                                    <img src="<%= contato.foto %>" alt="Foto de <%= contatos.nome %>" class="avatar">
+                                </div>
+                            </td>>
+                            <td>
+                                <%= contato.nome %>
+                            </td>
+                            <td>
+                                <%= contato.email %>
+                            </td>
+                            <td>
+                                <%= contato.ramal %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
 
-                <%}) %>
-            </tbody>    
-        </table>
+            <h3 class="text-center">Estamos disponíveis 24/7 para o esclarecer</h3>
 
-        <h3 class="text-center">Estamos disponíveis 24/7 para o esclarecer</h3>
+            <article class="text-center">
+                <img src="/img/icon_phone.png" alt="Telefone">
+                <a href="tel:351912345678" class="contactos">351 912 345 678</a>
+                <small>Entre as 09:00h e as 19:00h</small>
+            </article>
 
-        <article class="text-center">
-            <img src="/img/icon_phone.png" alt="Telefone">
-            <a href="tel:351912345678" class="contactos">351 912 345 678</a>
-            <small>Entre as 09:00h e as 19:00h</small>
-        </article>
+            <article class="text-center margin-top-40">
+                <img src="/img/icon_email.png" alt="Email">
+                <a href="mailto:inteligencia.artificial@ai.com" class="contactos">inteligencia.artificial@ai.com</a>
+                <small>Respondemos a todos os emails no prazo de 12 horas.</small>
+            </article>
+        </section>
 
-        <article class="text-center margin-top-40">
-            <img src="/img/icon_email.png" alt="Email">
-            <a href="mailto:inteligencia.artificial@ai.com" class="contactos">inteligencia.artificial@ai.com</a>
-            <small>Respondemos a todos os emails no prazo de 12 horas.</small>
-        </article>
-
-    </section>
-
-    <!-- ver servicos ou contactos -->
-    <section class="container-servicos-contactos">
-
-        <h1>Conheça os nossos servicos.</h3>
-
+        <!-- ver servicos ou contactos -->
+        <section class="container-servicos-contactos">
+            <h1>Conheça os nossos serviços.</h1>
             <div class="botoes-servicos-contactos">
-                <a href="servicos.html" class="botao">Os nossos serviços</a>
+                <a href="/servicos" class="botao">Os nossos serviços</a>
             </div>
+        </section>
 
-    </section>
-
-<%- include('partials/footer.ejs') %>
+        <%- include('partials/footer.ejs') %>

@@ -84,18 +84,19 @@ body {
 }
 
 /* ----------------------------------- */
-.container-servicos-contactos {
+.container-servicos-contatos {
     background-color:#082946;
     padding: 80px;
     text-align: center;
+    color: #fff;
 }
 
-.container-servicos-contactos .botoes-servicos-contactos {
+.container-servicos-contatos .botoes-servicos-contatos {
     padding: 60px;
     text-align: center;
 }
 
-.botoes-servicos-contactos a {
+.botoes-servicos-contatos a {
     display: block;
     max-width: 200px;
     text-decoration: none;
@@ -107,9 +108,28 @@ body {
     border-radius: 10px;
 }
 
-.botoes-servicos-contactos a:hover {
+.botoes-servicos-contatos a:hover {
     background-color: white;
     color: black;
+}
+
+.avatar-container {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Corta a imagem para preencher o container */
+  object-position: center; /* Centraliza o foco da imagem */
+  border: 2px solid #fff;
 }
 
 /* ----------------------------------- */
@@ -144,18 +164,18 @@ body {
 }
 
 /* ----------------------------------- */
-.container-contactos {
+.container-contatos {
     background-color:#05192a;
     padding: 80px;
 }
 
-.container-contactos h1 {
+.container-contatos h1 {
     font-size: 3em;
     color:white;
     margin-bottom: 20px;
 }
 
-.container-contactos h3 {
+.container-contatos h3 {
     font-size: 1.5em;
     font-weight: 100;
     width: 40%;
@@ -168,7 +188,7 @@ body {
     padding: 20px;
 }
 
-.container-contactos .contactos {
+.container-contatos .contatos {
     display: block;
     font-size: 2em;
     text-decoration: none;
