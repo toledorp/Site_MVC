@@ -5,17 +5,31 @@ import express from "express";
 const router = express.Router();
 
 //Rota de Serviços
+// Rota de Serviços
 router.get("/servicos", (req, res) => {
-  //Criando a variavel que será enviada para a página
   const servicos = [
-    { foto:"/img/agendamedica.png", projeto: "Plataforma de Curso EAD", link: https://youtu.be/7OLAtpBdvSA },
-    { projeto: "Sistema de Vendas Online" },
-    { projeto: "Sistema de Gestão Escolar" },
-    { projeto: "Aplicativo de Agenda Médica"},
+    { 
+      foto: "/img/agendamedica.png", 
+      projeto: "Plataforma de Curso EAD", 
+      video: "" // ou omita se não tiver" 
+    },
+    { 
+      foto: "/img/vendas.png", 
+      projeto: "Sistema de Vendas Online", 
+      video: "" // ou omita se não tiver
+    },
+    { 
+      foto: "/img/escolar.png", 
+      projeto: "Sistema de Gestão Escolar" 
+      // sem vídeo
+    },
+    { 
+      foto: "/img/agendamedica.png", 
+      projeto: "Aplicativo de Agenda Médica",
+      video: "https://youtu.be/7OLAtpBdvSA" // exemplo
+    },
   ];
-  res.render("servicos", {
-    servicos: servicos
-  });
+  res.render("servicos", { servicos });
 });
 
 // exportando o objeto router
