@@ -2,12 +2,14 @@ import express from "express"
 const app = express();
 
 import ContatosController from "./controllers/ContatosController.js";
+import ServicosController from "./controllers/ServicosController.js";
 
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
 app.use("/", ContatosController)
+app.use("/", ServicosController)
 
 app.get("/", (req, res) => {
     res.render("index");
