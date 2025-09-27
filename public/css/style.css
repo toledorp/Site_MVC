@@ -15,10 +15,14 @@ body {
 /* geral */
 .text-center {
     text-align: center;
+    color:#fff;
+    font-size: 20px;
 }
 
 .margin-top-40 {
     margin-top: 40px;
+    color: #fff;
+    font-size: 20px;
 }
 
 /* ----------------------------------- */
@@ -201,5 +205,6 @@ footer {
     text-align: center;
     padding: 80px;
     background-color: #02111f;
-    color: gray;
+    color: #fff;
+    font-size: 20px;
 }
