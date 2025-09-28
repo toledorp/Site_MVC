@@ -1,100 +1,94 @@
 <%- include('partials/header.ejs') %>
-<%- include('partials/navbar.ejs') %>
+  <%- include('partials/navbar.ejs') %>
 
-<section class="container-servicos">
-  <h1 class="text-center">Os nossos serviços</h1>
+    <section class="container-servicos">
+      <h1 class="text-center">Os nossos serviços</h1>
 
-  <table class="table table-bordered table-hover">
-    <thead class="table-dark">
-      <tr>
-        <th>Foto</th>
-        <th>Projeto</th>
-        <th>Vídeo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% servicos.forEach(servico => { %>
-        <tr>
-          <td>
-            <div class="avatar-container">
-              <img 
-                src="<%= servico.foto || '/img/placeholder.png' %>" 
-                alt="Foto de <%= servico.projeto %>" 
-                class="avatar"
-                onerror="this.src='/img/placeholder.png'"
-              >
-            </div>
-          </td>
-          <td class="tabela">
-            <%= servico.projeto || 'Projeto não informado' %>
-          </td>
-          <td>
-            <% if (servico.video && servico.video.trim()) { %>
-              <a href="#" class="video-link" data-video="<%= servico.video.trim() %>">
-                Assistir vídeo
-              </a>
-            <% } else { %>
-              <em>Sem vídeo</em>
-            <% } %>
-          </td>
-        </tr>
-      <% }) %>
-    </tbody>
-  </table>
+      <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>Foto</th>
+            <th>Projeto</th>
+            <th>Vídeo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% servicos.forEach(servico=> { %>
+            <tr>
+              <td>
+                <div class="avatar-container">
+                  <img src="<%= servico.foto %>" alt="Foto de <%= servicos.projeto %>" class="avatar">
+                </div>
+              </td>>
+              <td class="tabela">
+                <%= servico.projeto || 'Projeto não informado' %>
+              </td>
+              <td>
+                <% if (servico.video && servico.video.trim()) { %>
+                  <a href="#" class="video-link" data-video="<%= servico.video.trim() %>">
+                    Assistir vídeo
+                  </a>
+                  <% } else { %>
+                    <em>Sem vídeo</em>
+                    <% } %>
+              </td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
 
-  <!-- Contêiner para exibir o vídeo em destaque -->
-  <div id="videoDestaque" style="display: none; margin-top: 30px; text-align: center;">
-    <h3>Vídeo do Serviço</h3>
-    <div id="videoPlayer" style="max-width: 640px; margin: 0 auto;"></div>
-  </div>
+      <!-- Contêiner para exibir o vídeo em destaque -->
+      <div id="videoDestaque" style="display: none; margin-top: 30px; text-align: center;">
+        <h3>Vídeo do Serviço</h3>
+        <div id="videoPlayer" style="max-width: 640px; margin: 0 auto;"></div>
+      </div>
 
-  <!-- Conteúdo adicional -->
-  <article>
-    <h3>Soluções inovadoras para a sua empresa</h3>
-    <ul>
-      <li>Desenhamos novas soluções para aumento de produtividade</li>
-      <li>Aumentamos a performance dos colaboradores.</li>
-      <li>Incremento garantido de 20% nos lucros da empresa.</li>
-    </ul>
-  </article>
+      <article>
+        <h3>Soluções inovadoras para a sua empresa</h3>
+        <ul>
+          <li>Desenhamos novas soluções para aumento de produtividade</li>
+          <li>Aumentamos a performance dos colaboradores.</li>
+          <li>Incremento garantido de 20% nos lucros da empresa.</li>
+        </ul>
+      </article>
 
-  <article>
-    <h3>Projetamos o futuro do seu negócio</h3>
-    <ol>
-      <li>Pensamos na melhor solução</li>
-      <li>Desenvolvemos o produto em parceria consigo</li>
-      <li>Aplicamos a solução na empresa.</li>
-      <li>Fazemos a monitorização do processo.</li>
-    </ol>
-  </article>
-</section>
+      <article>
+        <h3>Projetamos o futuro do seu negócio</h3>
+        <ol>
+          <li>Pensamos na melhor solução</li>
+          <li>Desenvolvemos o produto em parceria consigo</li>
+          <li>Aplicamos a solução na empresa.</li>
+          <li>Fazemos a monitorização do processo.</li>
+        </ol>
+      </article>
+    </section>
 
-<section class="container-servicos-contatos">
-  <h2>Obtenha mais informações.</h2> <!-- Corrigido de h1 para h2 e fechado corretamente -->
-  <div class="botoes-servicos-contatos">
-    <a href="/contatos" class="botao">Contacte-nos</a>
-  </div>
-</section>
+    <section class="container-servicos-contatos">
+      <h2>Obtenha mais informações.</h2> 
+      <div class="botoes-servicos-contatos">
+        <a href="/contatos" class="botao">Contatos</a>
+      </div>
+    </section>
 
-<%- include('partials/footer.ejs') %>
+    <%- include('partials/footer.ejs') %>
 
-<!-- Script para carregar o vídeo dinamicamente -->
-<script>
-  document.querySelectorAll('.video-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const videoUrl = this.getAttribute('data-video');
+      <!-- Script para carregar o vídeo dinamicamente -->
+      <script>
+        document.querySelectorAll('.video-link').forEach(link => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const videoUrl = this.getAttribute('data-video');
 
-      // Extrair o ID do YouTube (suporta URLs com ou sem parâmetros)
-      const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-      const match = videoUrl.match(regExp);
-      const videoId = (match && match[2].length === 11) ? match[2] : null;
+            // Extrair o ID do YouTube (suporta URLs com ou sem parâmetros)
+            const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = videoUrl.match(regExp);
+            const videoId = (match && match[2].length === 11) ? match[2] : null;
 
-      const videoContainer = document.getElementById('videoPlayer');
-      const videoDestaque = document.getElementById('videoDestaque');
+            const videoContainer = document.getElementById('videoPlayer');
+            const videoDestaque = document.getElementById('videoDestaque');
 
-      if (videoId) {
-        videoContainer.innerHTML = `
+            if (videoId) {
+              videoContainer.innerHTML = `
           <iframe 
             width="100%" 
             height="360" 
@@ -104,11 +98,11 @@
             allowfullscreen>
           </iframe>
         `;
-        videoDestaque.style.display = 'block';
-      } else {
-        videoContainer.innerHTML = '<p>Vídeo inválido.</p>';
-        videoDestaque.style.display = 'block';
-      }
-    });
-  });
-</script>
+              videoDestaque.style.display = 'block';
+            } else {
+              videoContainer.innerHTML = '<p>Vídeo inválido.</p>';
+              videoDestaque.style.display = 'block';
+            }
+          });
+        });
+      </script>

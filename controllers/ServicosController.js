@@ -9,19 +9,19 @@ const router = express.Router();
 router.get("/servicos", (req, res) => {
   const servicos = [
     { 
-      foto: "/img/agendamedica.png", 
+      foto: "/img/ead.png", 
       projeto: "Plataforma de Curso EAD", 
       video: "" // ou omita se não tiver" 
     },
     { 
-      foto: "/img/vendas.png", 
+      foto: "/img/vendasonline.png", 
       projeto: "Sistema de Vendas Online", 
       video: "" // ou omita se não tiver
     },
     { 
-      foto: "/img/escolar.png", 
-      projeto: "Sistema de Gestão Escolar" 
-      // sem vídeo
+      foto: "/img/gestaoescolar.png", 
+      projeto: "Sistema de Gestão Escolar",
+      video: "" // sem vídeo
     },
     { 
       foto: "/img/agendamedica.png", 
