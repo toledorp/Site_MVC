@@ -8,25 +8,25 @@ const router = express.Router();
 // Rota de Serviços
 router.get("/servicos", (req, res) => {
   const servicos = [
-    { 
-      foto: "/img/ead.png", 
-      projeto: "Plataforma de Curso EAD", 
-      video: "" // ou omita se não tiver" 
+    {
+      foto: "/img/ead.png",
+      projeto: "Plataforma de Curso EAD",
+      versao: 1.1, 
     },
-    { 
-      foto: "/img/vendasonline.png", 
-      projeto: "Sistema de Vendas Online", 
-      video: "" // ou omita se não tiver
-    },
-    { 
-      foto: "/img/gestaoescolar.png", 
+    {
+      foto: "/img/vendasonline.png",
+      projeto: "Sistema de Vendas Online",
+      versao: 1.3, 
+    },    
+    {
+      foto: "/img/gestaoescolar.png",
       projeto: "Sistema de Gestão Escolar",
-      video: "" // sem vídeo
+      versao: 1.2, 
     },
-    { 
-      foto: "/img/agendamedica.png", 
+    {
+      foto: "/img/agendamedica.png",
       projeto: "Aplicativo de Agenda Médica",
-      video: "https://youtu.be/7OLAtpBdvSA" // exemplo
+      versao: 2.1, 
     },
   ];
   res.render("servicos", { servicos });
