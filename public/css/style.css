@@ -126,14 +126,17 @@ body {
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin: 0 auto;
 }
 
 .avatar {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Corta a imagem para preencher o container */
-  object-position: center; /* Centraliza o foco da imagem */
+  object-fit: cover; 
+  object-position: center;
   border: 2px solid #fff;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ----------------------------------- */
@@ -165,6 +168,40 @@ body {
     margin-bottom: 20px;
     margin-left: 50px;
     color: white;
+}
+
+/* Ajustes para a tabela */
+.container-servicos table {
+    width: auto;
+    margin: 0 auto;
+    table-layout: auto;
+}
+
+.container-servicos .table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #082946;
+    border-collapse: collapse;
+}
+
+.container-servicos .table th,
+.container-servicos .table td {
+    padding: 12px 15px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.container-servicos .table th {
+    background-color: #06345d;
+    color: #7cc2ff;
+    font-weight: bold;
+}
+
+.container-servicos .table td {
+    background-color: #061f35;
+    color: white;
+    border: 1px solid #105088;
 }
 
 /* ----------------------------------- */
