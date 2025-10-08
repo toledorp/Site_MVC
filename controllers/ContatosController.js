@@ -35,7 +35,7 @@ router.get("/contatos", (req, res) => {
       foto: "/img/pessoal/GustavoPereira.png"
     },
     { nome: "Helena Rocha",
-      email: "helena.rocha@ai.com",
+      email: "helena.rocha@ai.coom",
       ramal: 1070,
       foto: "/img/pessoal/HelenaRocha.png"
     },
