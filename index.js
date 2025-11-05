@@ -1,8 +1,28 @@
+// Importando o Express
 import express from "express"
+//Iniciando o Express
 const app = express();
 
+//Importando o Middleware de Autenticação
+// import Auth fron "./middleware/Auth.js"
+
+//Importando o express-session (gerador de sessões)
+import session from "express-session";
+
+//importando o Sequelize
+//import connection from "./config/sequelize-config.js";
+
+//Importando os Controllers
 import ContatosController from "./controllers/ContatosController.js";
 import ServicosController from "./controllers/ServicosController.js";
+
+//Importando Controller de usuários
+//import UsersController from "./controller/UsersController.js";
+
+//Importando os models
+//import Cliente from "./models/Cliente.js";
+//import
+
 
 app.set("view engine", "ejs");
 
