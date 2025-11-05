@@ -17,12 +17,12 @@ app.get("/", (req, res) => {
 
 const port = 8080;
 
-// app.listen(port, (error) => {
-//     if (error) {
-//         console.log(
-//             `Não foi possível iniciar o servidor: ${error}`
-//         );
-//     } else {
-//         console.log(`Servidor iniciado com sucesso em : http://localhost:${port}`);
-//     }
-// });
+app.listen(port, (error) => {
+    if (error) {
+        console.log(
+            `Não foi possível iniciar o servidor: ${error}`
+        );
+    } else {
+        console.log(`Servidor iniciado com sucesso em : http://localhost:${port}`);
+    }
+});
